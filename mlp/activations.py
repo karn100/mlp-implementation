@@ -13,5 +13,9 @@ def relu_derivative(z):
 
 def tanh(z):
     return np.tanh(z)
+def tanh_derivative(z):
+    return 1 - np.tanh(z) ** 2
 
-
+def softmax(z):
+    exp_z = np.exp(z - np.max(z,axis=1,keepdims=True))
+    return exp_z / np.sum(exp_z,axis=1,keepdims=True)
