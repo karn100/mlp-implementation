@@ -11,6 +11,11 @@ def relu(z):
 def relu_derivative(z):
     return np.where(z > 0, 1, 0)
 
+def leaky_relu(z,alpha):
+    return np.where(z > 0, z, alpha*z)
+def leaky_relu_derivative(z,alpha):
+    return np.where(z > 0, 1, alpha)
+
 def tanh(z):
     return np.tanh(z)
 def tanh_derivative(z):
