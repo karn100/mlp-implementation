@@ -18,4 +18,3 @@ class MomentumOptimizer(Optimizer):
             mom_cof = group['mom_cof']
             nesterov = group['nesterov']
             for  p in group['params']:
-            
