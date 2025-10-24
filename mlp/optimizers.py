@@ -8,9 +8,10 @@ class MomentumOptimizer(Optimizer):
         default = dict(lr = lr,mom_cof = mom_cof,nesterov = nesterov)
         super().__init__(params,default)
     
+    @torch.no_grad()
     def step(self,closure = None):
         loss = None
-        if closure:
+        if closure is not None:
             loss = closure()
         
         for group in self.param_groups:
